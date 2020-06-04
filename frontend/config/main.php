@@ -11,6 +11,11 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'modules' => [
+        'news' => [
+            'class' => 'frontend\modules\news\News',
+        ],
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
@@ -36,14 +41,18 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+        
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'login' => 'login/login',
+                'success' => 'login/success',
+                'logout' => 'login/logout',
+                'news' => 'news/news/index',
             ],
         ],
-        */
+
     ],
     'params' => $params,
 ];
